@@ -1,3 +1,4 @@
+'use client';
 import { Alert } from '@/lib/mockData';
 import { AlertCircle, AlertTriangle, Info, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';

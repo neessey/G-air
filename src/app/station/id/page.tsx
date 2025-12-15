@@ -10,9 +10,10 @@ import { ArrowLeft, Download, MapPin, Clock, Thermometer, Droplets, Wind, Activi
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { stations, generateHistoricalData, getAQILabel, getAQIBgColor, getAQIColor } from '@/lib/mockData';
 
-export default function StationDetail({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+export default async function StationDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;  
   const station = stations.find((s) => s.id === id);
+
 
   if (!station) {
     return (
